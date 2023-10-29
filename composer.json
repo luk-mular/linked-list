@@ -1,0 +1,22 @@
+{
+  "name": "luk-mular/linked-list",
+  "description": "LinkedList",
+  "type": "library",
+  "require": {
+    "php": ">=8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "LinkedList\\": "src/LinkedList"
+    }
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Łukasz Mularczyk",
+      "email": "luk.mular@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}

@@ -3,13 +3,14 @@
 namespace LinkedList;
 
 use InvalidArgumentException;
+use LinkedList\Node;
 
 abstract class AbstractLinkedList implements LinkedListInterface
 {
     /**
      * @var \LinkedList\Node|null
      */
-    protected ?Node $head;
+    protected ?Node $head = null;
 
     /**
      * @param int|string $value
@@ -63,9 +64,10 @@ abstract class AbstractLinkedList implements LinkedListInterface
         do {
             if ($currentNode->getValue() === $value) {
                 $this->removeNode($currentNode, $previousNode);
+            } else {
+                $previousNode = $currentNode;
             }
-
-            $previousNode = $currentNode;
+            
             $currentNode = $currentNode->getNextNode();
         } while ($currentNode !== null && $this->mayExistsInCurrentOrNextNodes($value, $currentNode));
     }

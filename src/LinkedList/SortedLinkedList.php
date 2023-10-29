@@ -21,12 +21,14 @@ class SortedLinkedList extends AbstractLinkedList
      */
     protected function getNodeBeforeNewValue(int|string $value): Node
     {
+        $previousNode = null;
         $currentNode = $this->head;
-        while ($currentNode->getNextNode() !== null && $value > $currentNode->getNextNode()) {
+        while ($currentNode !== null && $value > $currentNode->getValue()) {
+            $previousNode = $currentNode;
             $currentNode = $currentNode->getNextNode();
         }
 
-        return $currentNode;
+        return $previousNode;
     }
 
     /**
